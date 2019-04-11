@@ -36,10 +36,21 @@ print("kmean 2 clusters")
 print(metrics.silhouette_score(dataset, kmeans_predictions2))
 
 
+gaussian_predictions4 = GaussianMixture(n_components=4).fit(dataset).predict(dataset)
+plt.scatter(dataset[0],dataset[1], c=gaussian_predictions4)
+plt.savefig("scatter_gaussian4.png")
+print("gaussian 4 components")
+print(metrics.silhouette_score(dataset, gaussian_predictions4))
 
-
-gaussian_predictions = GaussianMixture(n_components=3).fit(dataset).predict(dataset)
-plt.scatter(dataset[0],dataset[1], c=gaussian_predictions)
+gaussian_predictions3 = GaussianMixture(n_components=3).fit(dataset).predict(dataset)
+plt.scatter(dataset[0],dataset[1], c=gaussian_predictions3)
 plt.savefig("scatter_gaussian3.png")
+print("gaussian 3 components")
+print(metrics.silhouette_score(dataset, gaussian_predictions3))
 
+gaussian_predictions2 = GaussianMixture(n_components=2).fit(dataset).predict(dataset)
+plt.scatter(dataset[0],dataset[1], c=gaussian_predictions2)
+plt.savefig("scatter_gaussian2.png")
+print("gaussian 2 components")
+print(metrics.silhouette_score(dataset, gaussian_predictions2))
 
